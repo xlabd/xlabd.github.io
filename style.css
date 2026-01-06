@@ -63,15 +63,18 @@ nav a:hover {
 #theme-toggle {
   background: transparent;
   border: none;
-  color: white;
-  font-size: 1.3rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   margin-left: 1rem;
-  transition: transform 0.3s;
 }
 
-#theme-toggle:hover {
-  transform: scale(1.2);
+#theme-toggle img {
+  filter: invert(100%);
+  /* makes icons white in header */
+  transition: transform 0.3s ease;
 }
 
 section {

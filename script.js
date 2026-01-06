@@ -1,28 +1,25 @@
-// script.js
 const toggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+// Initial setup
 if (prefersDark) {
   document.body.classList.add('dark');
-  toggle.textContent = '☀️';
+  themeIcon.src = 'assets/sun.svg';
 } else {
-  toggle.textContent = '🌙';
+  themeIcon.src = 'assets/moon.svg';
 }
 
-// Toggle theme
-if (toggle) {
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-  });
-}
+// Toggle theme on click
+toggle.addEventListener('click', () => {
+  const isDark = document.body.classList.toggle('dark');
+  themeIcon.src = isDark ? 'assets/sun.svg' : 'assets/moon.svg';
+});
 
-// Smooth scroll for navigation
-const links = document.querySelectorAll('nav a');
-links.forEach(link => {
+document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(link.getAttribute('href').substring(1))
+      .scrollIntoView({ behavior: 'smooth' });
   });
 });
