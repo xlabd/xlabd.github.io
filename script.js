@@ -1,7 +1,13 @@
+// script.js
 const toggle = document.getElementById('theme-toggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (prefersDark) document.body.classList.add('dark');
+if (prefersDark) {
+  document.body.classList.add('dark');
+  toggle.textContent = '☀️';
+} else {
+  toggle.textContent = '🌙';
+}
 
 // Toggle theme
 if (toggle) {
