@@ -1,7 +1,8 @@
 :root {
-  --green: #2ecc71;
+  --green-light: #3E5641;
+  --green-dark: #315e35;
   --light-bg: #ffffff;
-  --dark-bg: #121212;
+  --dark-bg: #171717;
   --light-text: #333;
   --dark-text: #f2f2f2;
 }
@@ -16,7 +17,7 @@ body {
 }
 
 header {
-  background: var(--green);
+  background: var(--green-light);
   color: white;
   padding: 1rem 0;
   position: sticky;
@@ -37,6 +38,11 @@ header {
   flex-wrap: wrap;
 }
 
+header nav {
+  flex-grow: 1;
+  text-align: center;
+}
+
 header nav a {
   color: white;
   margin: 0 10px;
@@ -54,6 +60,9 @@ header nav a:hover {
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 section {
@@ -62,8 +71,8 @@ section {
 }
 
 h2 {
-  color: var(--green);
-  border-left: 5px solid var(--green);
+  color: var(--green-light);
+  border-left: 5px solid var(--green-light);
   padding-left: 10px;
 }
 
@@ -73,7 +82,7 @@ ul {
 }
 
 a {
-  color: var(--green);
+  color: var(--green-light);
   text-decoration: none;
 }
 
@@ -94,16 +103,24 @@ body.dark {
   color: var(--dark-text);
 }
 
+body.dark header {
+  background: var(--green-dark);
+}
+
 body.dark footer {
   background: #1e1e1e;
   color: #bbb;
 }
 
 body.dark a {
-  color: #58d68d;
+  color: var(--green-light);
+}
+
+body.dark nav a {
+  color: white;
 }
 
 body.dark h2 {
-  color: #58d68d;
-  border-color: #58d68d;
+  color: var(--green-dark);
+  border-color: var(--green-dark);
 }
