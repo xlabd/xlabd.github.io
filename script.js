@@ -1,21 +1,17 @@
-const toggle = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const checkbox = document.getElementById("checkbox");
 
-// Initial setup
-if (prefersDark) {
-  document.body.classList.add('dark');
-  themeIcon.src = 'assets/sun.svg';
-} else {
-  themeIcon.src = 'assets/moon.svg';
+// Apply system preference on first load
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  document.body.classList.add("dark");
+  checkbox.checked = true;
 }
 
-// Toggle theme on click
-toggle.addEventListener('click', () => {
-  const isDark = document.body.classList.toggle('dark');
-  themeIcon.src = isDark ? 'assets/sun.svg' : 'assets/moon.svg';
+// Toggle dark mode when switch is clicked
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
 });
 
+// Smooth scroll (unchanged)
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();

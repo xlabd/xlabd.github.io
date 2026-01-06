@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Labhesh Valechha | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,9 +25,14 @@
         <a href="#education">Education</a>
         <a href="#volunteering">Volunteering</a>
         <a href="#contact">Contact</a>
-        <button id="theme-toggle" aria-label="Toggle theme">
-          <img id="theme-icon" src="assets/moon.svg" alt="Toggle Theme" width="20" height="20">
-        </button>
+        <div class="theme-toggle">
+          <label for="checkbox" class="checkbox-label">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
 
       </nav>
     </div>
