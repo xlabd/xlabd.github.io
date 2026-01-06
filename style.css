@@ -96,7 +96,6 @@ footer {
   color: #555;
 }
 
-/* Dark mode */
 body.dark {
   background-color: var(--dark-bg);
   color: var(--dark-text);
@@ -146,9 +145,22 @@ body.dark h2 {
   border-radius: 50px;
   cursor: pointer;
   display: block;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
 }
 
-/* Hide the actual checkbox */
+body.dark .checkbox-label {
+  background-color: #244a27;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.checkbox-label:hover {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  transform: scale(1.03);
+}
+
 .checkbox {
   opacity: 0;
   width: 0;
@@ -156,7 +168,6 @@ body.dark h2 {
   position: absolute;
 }
 
-/* The ball inside the switch */
 .checkbox-label .ball {
   position: absolute;
   top: 3px;
@@ -168,12 +179,10 @@ body.dark h2 {
   transition: 0.25s;
 }
 
-/* Move the ball when checked */
 .checkbox:checked~.ball {
   transform: translateX(26px);
 }
 
-/* Optional: add icons inside the label */
 .checkbox-label i {
   position: absolute;
   top: 50%;

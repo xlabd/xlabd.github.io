@@ -11,7 +11,7 @@ checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
 });
 
-// Smooth scroll (unchanged)
+// Smooth scroll
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
